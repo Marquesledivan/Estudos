@@ -1,0 +1,12 @@
+---
+- name: Define o arquivo de configuracao do servidor de Logs
+  when: rsyslog_installed|success
+  copy: src=rsyslog.conf dest=/etc/rsyslog.conf owner=root group=root mode=0644
+  notify:
+    - Reload Rsyslog
+- name: Define o arquivo de configuração para gravar em banco MysQL
+  when: mysql_installed
+  copy: src=mysql.conf dest=/etc/rsyslog.d/mysql.conf owner=root group=root mode=0644
+  notify:
+    - Reload Rsyslog
+

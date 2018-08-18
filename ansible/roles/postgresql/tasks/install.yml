@@ -1,0 +1,9 @@
+---
+- name: Instala servidor de Postgres da empresa Dexter Courier
+  apt: pkg=postgresql-9.4 state=installed update_cache=true
+  register: postgresql_installed
+  notify:
+    - Start PostgreSQL
+- name: Instala pacote python psycopg2 usado para gerenciar bases do PostgreSQL
+  apt: pkg=python-psycopg2 state=installed update_cache=true
+  when: postgresql_installed|success

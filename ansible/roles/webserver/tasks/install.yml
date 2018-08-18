@@ -1,0 +1,29 @@
+---
+- name: Instala pacotes para suporte a PHP no Apache Debian
+  apt: name={{php_packages_debian}} state=installed update_cache=true
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  register: php_packages_debian_installed
+  notify:
+    - Start Apache
+- name: Instala pacotes para suporte a PHP no Apache CentOS
+  yum: name={{php_packages_centos}} state=installed update_cache=true
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  register: php_packages_centos_installed
+  notify:
+    - Start Httpd
+- name: Instala aplicação RoundCube - Area de Testes
+  command: "{{ item }}"
+  with_items:
+    - wget https://downloads.sourceforge.net/project/roundcubemail/roundcubemail/1.1.3/roundcubemail-1.1.3-complete.tar.gz -O /tmp/roundcubemail-1.1.3-complete.tar.gz
+    - tar xfz /tmp/roundcubemail-1.1.3-complete.tar.gz -C /var/www/html/
+    - mv /var/www/html/roundcubemail-1.1.3 /var/www/html/roundcubemail
+  when: (php_packages_debian_installed|success and php_packages_centos_installed|success)
+  register: roundcube_installed
+- name: Instala aplicação LogAnalyzer - Area de Testes
+  command: "{{ item }}"
+  with_items:
+    - wget -c http://download.adiscon.com/loganalyzer/loganalyzer-4.1.3.tar.gz -O /tmp/loganalyzer-4.1.3.tar.gz
+    - tar xfz /tmp/loganalyzer-4.1.3.tar.gz -C /tmp
+    - mv /tmp/loganalyzer-4.1.3/src /var/www/html/loganalyzer
+  when: (php_packages_debian_installed|success and php_packages_centos_installed|success)
+  register: loganalyzer_installed

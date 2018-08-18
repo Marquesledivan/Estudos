@@ -1,0 +1,6 @@
+---
+- name: Instala servidor DNS da empresa Dexter Courier
+  apt: pkg=bind9 state=installed update_cache=true
+  register: bind9_installed
+  notify:
+     - Start Bind9

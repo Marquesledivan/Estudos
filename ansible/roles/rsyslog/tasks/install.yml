@@ -1,0 +1,11 @@
+---
+- name: Instala servidor de Logs da empresa Dexter Courier
+  apt: pkg=rsyslog state=installed update_cache=true
+  register: rsyslog_installed
+  notify:
+    - Start Rsyslog
+- name: Ativa o suporte do Rsyslog gravar em banco MySQL
+  apt: pkg=rsyslog-mysql state=installed update_cache=true
+  register: mysql_installed
+  notify:
+    - Start Rsyslog

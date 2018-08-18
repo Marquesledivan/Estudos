@@ -1,0 +1,9 @@
+---
+- name: Instala servidor de MySQL da empresa Dexter Courier
+  apt: pkg=mariadb-server state=installed update_cache=true
+  register: mysql_installed
+  notify:
+    - Start MySQL
+- name: Instala pacote python-mysqldb usado para gerenciar bases do MySQL
+  apt: pkg=python-mysqldb state=installed update_cache=true
+  when: mysql_installed|success

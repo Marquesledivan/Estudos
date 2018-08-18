@@ -1,0 +1,4 @@
+---
+- hosts: security
+  roles:
+    - rsyslog

@@ -1,0 +1,19 @@
+------------------------------------------------------------------------------
+     ________  ___      ___ ________          ________  ________     
+    |\   ____\|\  \    /  /|\   ____\        |\   __  \|\   __  \    
+    \ \  \___|\ \  \  /  / | \  \___|        \ \  \|\  \ \  \|\  \   
+     \ \  \    \ \  \/  / / \ \  \            \ \  \\\  \ \   __  \  
+      \ \  \____\ \    / /   \ \  \____        \ \  \\\  \ \  \ \  \ 
+       \ \_______\ \__/ /     \ \_______\       \ \_____  \ \__\ \__\
+        \|_______|\|__|/       \|_______|        \|___| \__\|__|\|__|
+                                                   \|__|         
+Welcome to {{ grains['fqdn']|upper }} !
+OS: {{ grains['osfullname'] }}
+Kernel: {{ grains['kernelrelease'] }}
+Memory: {{ grains['mem_total'] }} MB
+
+This server is configured using salt (saltstack.org). Please do not change
+anything directly, but instead modify server configuration via configuration
+repository.
+Proceed with caution!!!
+------------------------------------------------------------------------------

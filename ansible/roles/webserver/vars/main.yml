@@ -1,0 +1,27 @@
+---
+php_packages_debian:
+  - apache2
+  - libapache2-mod-php5
+  - php5
+  - php5-curl
+  - php5-gd
+  - php5-intl
+  - php5-xmlrpc
+  - php5-pgsql
+  - php-pear
+  - php5-mcrypt
+  - php5-ldap
+  - php-net-ldap2
+  - php5-imagick
+  - php-fpdf
+  - php5-mysql
+php_packages_centos:
+  - epel-release
+  - httpd
+  - php
+  - php-pgsql
+  - php-gd
+  - php-ldap
+  - php-xmlrpc
+  - php-intl
+  - php-mysql

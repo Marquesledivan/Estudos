@@ -1,0 +1,18 @@
+---
+- name: Define os arquivos de configuracao do servidor DNS
+  when: bind9_installed|success
+  copy: src={{item}} dest=/etc/bind/ owner=root group=root mode=0644
+  with_items:
+      - named.conf.local
+      - named.conf.options
+  notify:
+      - Reload Bind9
+- name: Define os arquivos de registro de Zona
+  when: bind9_installed|success
+  copy: src={{item}} dest=/var/cache/bind/ owner=root group=root mode=0644
+  with_items:
+      - db.dexter.interna
+      - rev.dexter.interna
+  notify:
+      - Reload Bind9
+

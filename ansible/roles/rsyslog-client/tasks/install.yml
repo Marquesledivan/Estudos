@@ -1,0 +1,6 @@
+---
+- name: Instala Rsyslog nos servidor da empresa Dexter Courier
+  apt: pkg=rsyslog state=installed update_cache=true
+  register: rsyslog_installed
+  notify:
+    - Start Rsyslog

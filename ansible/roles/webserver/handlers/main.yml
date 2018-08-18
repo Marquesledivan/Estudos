@@ -1,0 +1,9 @@
+---
+- name: Start Apache
+  service: name=apache2 state=started
+- name: Start Httpd
+  service: name=httpd state=started
+- name: Reload Apache
+  service: name=apache2 state=reloaded
+- name: Reload Httpd
+  service: name=httpd state=reloaded

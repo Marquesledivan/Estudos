@@ -1,0 +1,13 @@
+127.0.0.1               localhost.localdomain           localhost
+192.168.100.101         security.dexter.com.br          security
+192.168.100.102         devopscenter.dexter.com.br      devopscenter
+192.168.100.103         testing.dexter.com.br           testing
+192.168.100.104         homolog.dexter.com.br           homolog
+192.168.100.105         loadbalancer.dexter.com.br      loadbalancer
+192.168.100.106         webserver01.dexter.com.br       webserver01
+192.168.100.107         webserver02.dexter.com.br       webserver01
+192.168.100.108         database.dexter.com.br          database
+172.18.0.101            ansible-server.dexter.com.br    ansible-server
+172.18.0.102            chef-server.dexter.com.br       chef-server
+172.18.0.103            puppet-server.dexter.com.br     puppet-server
+172.18.0.110            chef-workstation.dexter.com.br  chef-workstation
