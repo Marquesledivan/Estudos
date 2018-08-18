@@ -1,0 +1,14 @@
+{
+  "Gemfile": "36c376f27539ded2a321b2bd432e843b",
+  "README.md": "a4904948200caddb0d1c83a5c1fcbc64",
+  "Rakefile": "f4692851f7e9afcdb02721319e3f18b9",
+  "examples/init.pp": "0ceec4171052aa4c639bf5c0b8be46fc",
+  "files/db.dexter.interna": "fe9f696a7dc8fbd7cc1cfaaa88bf8d27",
+  "files/named.conf.local": "d3b1ba84ec82aa7940df6207575e16f3",
+  "files/named.conf.options": "1e235b4660590f6f9c8de4a1b3d25a34",
+  "files/rev.dexter.interna": "3e88eec3336c2400296297e766e0bc86",
+  "manifests/init.pp": "6a1a58a3c12de8c19535af75a4336304",
+  "metadata.json": "06fed84628ca8b0e82a8bbe71267038c",
+  "spec/classes/init_spec.rb": "a2f9cfeb3a6afb11e52d414ba49ead89",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc"
+}
