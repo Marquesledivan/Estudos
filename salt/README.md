@@ -72,7 +72,7 @@ salt-call state.highstate
 (root@napsalt01 - ~ @18:45:19)
 0:> salt-key -L
 Accepted Keys:
-cvcdockerclearsale01
+ledivan01
 ledivan.com.br
 Rejected Keys:
 
@@ -80,7 +80,7 @@ Rejected Keys:
 0:> salt-key -A
 The following keys are going to be accepted:
 Unaccepted Keys:
-napoag04.cvc.com.br
+nap.ledivan.com.br
 Proceed? [n/Y] Y
 Key for minion ledivan.com.br accepted.
 ```
