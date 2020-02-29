@@ -1,11 +1,11 @@
-/etc/docker/certs.d/cvcregistry01.cvc.com.br:5000:
+/etc/docker/certs.d/end_point:5000:
   file.directory:
     - user: root
     - group: root
     - mod: 0644
     - makedirs: True
 
-/etc/docker/certs.d/cvcregistry01.cvc.com.br:5000/ca.crt:
+/etc/docker/certs.d/end_point:5000/ca.crt:
   file.managed:
     - user: root
     - group: root
@@ -14,6 +14,6 @@
 
 login-registry:
   cmd.run:
-    - name: docker login -u cvc -p cvc2016@@ -e redes@cvc.com.br cvcregistry01.cvc.com.br:5000
+    - name: docker login -u ledivan -p senha -e ledivanbernardo@cvc.com.br end_point:5000
     - watch:
-      - file: /etc/docker/certs.d/cvcregistry01.cvc.com.br:5000/ca.crt
+      - file: /etc/docker/certs.d/end_point:5000/ca.crt
