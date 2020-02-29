@@ -1,4 +1,4 @@
-/u01/clearsale/ti/cvc_home:
+/u01/clearsale/ti/ledivan_home:
   file.directory:
     - user: root
     - group: root
@@ -21,12 +21,12 @@
 
 cvc_home:
   file.recurse:
-    - name: /u01/clearsale/ti/cvc_home
+    - name: /u01/clearsale/ti/ledivan_home
     - user: root
     - group: root
     - dir_mode: 0755
     - file_mode: '0655'
-    - source: salt://ti/clearsale/cvc_home
+    - source: salt://ti/clearsale/ledivan_home
     - include_empty: True
 
 farm:
